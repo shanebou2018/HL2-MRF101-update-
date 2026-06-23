@@ -12,7 +12,7 @@ Q4,SOT-23,1,DTC144E,Mouser,755-DTC144EU3HZGT106,
 J8,JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical,1,Fan,Mouser,306-B2B-XH-A,JST XH 2-pin 2.5mm vertical connector
 "J7","TerminalBlock_Phoenix_PT-1,5-2-3.5-H_1x02_P3.50mm_Horizontal",1,12V,Mouser,651-1935161,Phoenix Contact PT-1.5/2-3.5-H 2-pin 3.5mm pitch
 R39,R_0805_2012Metric,1,5k6,Mouser,71-CRCW08055K60FKEA#,
-"L3,L9",T50_V_THT,2,680n,,,Self-wound on T50 iron-powder core; wind to inductance specification
+"L3,L9",T50_V_THT,2,680n,Mouser,673-T50-2,T50-2 (red) core: 12t = 706nH (+3.8%) | T50-6 (yellow) core: 13t = 676nH (-0.6%) | 22 AWG enameled Cu; verify with LCR meter
 U2,MAX11613,1,MAX11645EUA+,Mouser,700-MAX11645EUA+,Maxim/ADI 12-bit ADC; MAX11645 is pin-compatible with MAX11613 footprint; updated designation
 U6,MSOP-8_3x3mm_P0.65mm,1,MCP4561,Mouser,579-MCP4561T-103E/MS,
 U7,SOT-23-5,1,INA193A,Mouser,595-INA193AIDBVT,UPDATED: INA193A replaces INA193 - improved specs; same SOT-23-5 footprint and pinout; no PCB change required
@@ -30,11 +30,14 @@ J2,PinSocket_1x20_P2.54mm_Vertical,1,HL2,,,Standard 2.54mm 20-pin female header 
 R29,R_0805_2012Metric,1,2k,Mouser,71-CRCW08052K00FKEAC,
 T3,SignalCommunications-WE-DCT,1,744851330,Mouser,710-744851330,
 L14,SignalCommunications-WE-PF_7427929XXX,1,7427929112,Mouser,710-7427929112,
-"L1,L7",T50_V_THT,2,224n,,,Self-wound on T50 iron-powder core; wind to inductance specification
-"L2,L8",T50_V_THT,2,385n,,,Self-wound on T50 iron-powder core; wind to inductance specification
-"L4,L10",T50_V_THT,2,1.1u,,,Self-wound on T50 iron-powder core; wind to inductance specification
-"L5,L11",T50_V_THT,2,1.7u,,,Self-wound on T50 iron-powder core; wind to inductance specification
-"L6,L12",T50_V_THT,2,3.1u,,,Self-wound on T50 iron-powder core; wind to inductance specification
+"L1,L7",T50_V_THT,2,224n,Mouser,673-T50-2,T50-2 (red) core: 7t = 240nH (+7.2%) | T50-6 (yellow) core: 7t = 196nH (-12.5% - low) prefer T50-2 here | 22 AWG enameled Cu; verify with LCR meter
+"L2,L8",T50_V_THT,2,385n,Mouser,673-T50-2,T50-2 (red) core: 9t = 397nH (+3.1%) | T50-6 (yellow) core: 10t = 400nH (+3.9%) | 22 AWG enameled Cu; verify with LCR meter
+"L4,L10",T50_V_THT,2,1.1u,Mouser,673-T50-2,T50-2 (red) core: 15t = 1102nH (+0.2%) | T50-6 (yellow) core: 17t = 1156nH (+5.1%) | 22 AWG enameled Cu; verify with LCR meter
+"L5,L11",T50_V_THT,2,1.7u,Mouser,673-T50-2,T50-2 (red) core: 19t = 1769nH (+4.1%) | T50-6 (yellow) core: 21t = 1764nH (+3.8%) | 22 AWG enameled Cu; verify with LCR meter
+"L6,L12",T50_V_THT,2,3.1u,Mouser,673-T50-2,T50-2 (red) core: 25t = 3062nH (-1.2%) | T50-6 (yellow) core: 28t = 3136nH (+1.2%) | 22 AWG enameled Cu; verify with LCR meter
+---WINDING MATERIAL---,,,T50-2 iron-powder cores (buy 12 if using T50-2 for all),Mouser,673-T50-2,Micrometals T50-2 red core AL=49; suitable for all HF bands to 30 MHz
+---WINDING MATERIAL---,,,T50-6 iron-powder cores (optional - buy 6 for higher-band filters),Mouser,673-T50-6,Micrometals T50-6 yellow core AL=40; lower loss above 10 MHz - use for L1-L3/L7-L9 if desired
+---WINDING MATERIAL---,,,22 AWG enameled copper magnet wire,Mouser,829-MW0220.100P,Remington Industries 22 AWG magnet wire; ~1m total needed for all 12 inductors
 "C6,C31",C_1206_3216Metric,2,89p,Mouser,603-CC126JRNPOBBN890,Vishay 89pF NP0 1206; NOTE: 89pF is non-standard E24 value - if unavailable substitute 91pF (603-CC126JRNPOBBN910)
 "C7,C19,C32",C_1206_3216Metric,3,180p,Mouser,81-GRM31A5C3A181JW1D,
 "C8,C33",C_1206_3216Metric,2,270p,Mouser,81-GRM31A5C2H271GW1D,
