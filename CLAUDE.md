@@ -28,6 +28,31 @@ measurements/               S-parameter plots from test builds
 - **R36, R37, R38** are PureSignal attenuator resistors with value TBD — do not assign values without consulting the builder
 - The two groups of 100nF 0805 capacitors (C70 group and C78 group) now share the same Mouser part (810-C2012X7R2A104K125AA); they were previously split across Mouser and Farnell
 
+### NP0/C0G RF Filter Capacitor Sourcing (C6–C36, C86)
+
+All bandpass filter capacitors (1206 NP0/C0G) have been standardised on the **KEMET C1206C series** (Mouser prefix `80-C1206Cxxx`), replacing the discontinued Vishay CC126/CC206 Vitramon line and Walsin 791-series parts. TDK C3216C0G parts are used for 1200pF and 2200pF where KEMET doesn't have stock. All are 50V rated (adequate for this 12V-supplied circuit).
+
+Key substitutions made:
+- C6, C31: 89pF → **91pF** (E24 standard; negligible filter shift). Part: `80-C1206C910J5GACTU`
+- C7, C19, C32 (180pF): `80-C1206C181J5GACTU`
+- C8, C33 (270pF): `80-C1206C271J5GACTU`
+- C9, C10, C34, C35 (560pF): `80-C1206C561J5GACTU`
+- C11, C23, C36 (1200pF): `810-C3216C0G2J122J085AA` (TDK, full part number updated)
+- C12, C25 (39pF): `80-C1206C390G5GACTU`
+- C13, C26 (56pF): `80-C1206C560J5GACTU`
+- C14, C27 (100pF): `80-C1206C101J5GACTU`
+- C15, C28 (150pF): `80-C1206C151J5GACTU`
+- C16, C29 (220pF): `80-C1206C221J5GACTU`
+- C17, C30 (470pF): `80-C1206C471J5GACTU`
+- C20 (330pF): `80-C1206C331J5GACTU`
+- C21 (470pF): `80-C1206C471J5GACTU`
+- C22 (1000pF): `80-C1206C102J5GACTU`
+- C24 (2200pF): `810-C3216C0G2J222J085AA` (TDK, full part number updated)
+- C66 (220pF 0805): `80-C0805C221J5GACTU`
+- C86 (33pF): `80-C1206C330J5GACTU`
+
+**Critical:** All filter caps must be NP0/C0G dielectric — do NOT substitute X7R or other temperature-varying dielectrics.
+
 ### T50 Wound Inductor Turn Counts (L1–L12)
 
 All wound on T50 iron-powder cores, 22 AWG enameled copper wire. T50-2 (red, AL=49) is recommended for all. Formula: N = 100 × √(L_µH / AL)
@@ -60,16 +85,19 @@ Wire: Mouser 829-MW0220.100P (~1 m total for all 12 inductors).
 - Fix requires remapping each symbol to the canonical KiCad library (Device:C_Small, Device:R_Small, etc.) — a significant manual effort in the KiCad schematic editor
 - Do not attempt to fix this by editing the .sch file by hand; it must be done via KiCad's "Change Symbol" function
 
-### LOW — CC206 Vishay capacitor package code unverified
-- C16, C17, C21, C29, C30 use Mouser part numbers with "CC206" in the part number (e.g. 603-CC206JRNPOBBN221)
-- These are in 1206 (C_1206_3216Metric) footprints in the PCB
-- The CC206 Vishay code *may* indicate a 2010 case rather than 1206 — needs datasheet verification before ordering
-- If they turn out to be 2010 size, replacement NP0 1206 parts will need to be sourced and the BOM updated (no PCB change needed if a 2010-bodied part can fit a 1206 pad, but confirm first)
+### MEDIUM — L15, L16 inductor part number is invalid
+- The BOM lists `994-1812LS-182XJBC` (Coilcraft 1812LS 1.8µH) for L15 and L16
+- Research confirmed: the Coilcraft 1812LS series covers **12µH to 1000µH only** — a 1.8µH (code 182) value does not exist in this series
+- The part number is either obsolete/discontinued or was a transcription error from the original Farnell 2345144
+- **Action needed**: identify a suitable 1.8µH shielded SMD inductor that fits the L_1812_4532Metric footprint (4.5mm × 3.2mm pad area) and replace the BOM entry
+- Do not order 994-1812LS-182XJBC — it will not be fulfilled
 
-### LOW — C6, C31 89pF non-standard value
-- 89pF is not an E24 standard value; Vishay CC126JRNPOBBN890 is listed
-- If unavailable, substitute 91pF (603-CC126JRNPOBBN910) — note the slightly higher value will shift the filter corner frequency very slightly
-- Confirm with the builder before substituting
+### RESOLVED — CC206 Vishay capacitor package code
+- Previously flagged C16, C17, C21, C29, C30 with uncertain CC206 Vishay package code
+- All Vishay CC126/CC206 parts have been replaced with KEMET C1206C series equivalents (see BOM Status above); this issue is no longer relevant
+
+### RESOLVED — C6, C31 89pF non-standard value
+- Previously substituted with KEMET 91pF (C1206C910J5GACTU); note updated in BOM
 
 ## Library Configuration Notes
 
