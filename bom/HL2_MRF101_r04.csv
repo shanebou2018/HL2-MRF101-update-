@@ -35,9 +35,9 @@ L14,SignalCommunications-WE-PF_7427929XXX,1,7427929112,Mouser,710-7427929112,
 "L4,L10",T50_V_THT,2,1.1u,Mouser,673-T50-2,T50-2 (red) core: 15t = 1102nH (+0.2%) | T50-6 (yellow) core: 17t = 1156nH (+5.1%) | 22 AWG enameled Cu; verify with LCR meter
 "L5,L11",T50_V_THT,2,1.7u,Mouser,673-T50-2,T50-2 (red) core: 19t = 1769nH (+4.1%) | T50-6 (yellow) core: 21t = 1764nH (+3.8%) | 22 AWG enameled Cu; verify with LCR meter
 "L6,L12",T50_V_THT,2,3.1u,Mouser,673-T50-2,T50-2 (red) core: 25t = 3062nH (-1.2%) | T50-6 (yellow) core: 28t = 3136nH (+1.2%) | 22 AWG enameled Cu; verify with LCR meter
----WINDING MATERIAL---,,,T50-2 iron-powder cores (buy 12 if using T50-2 for all),Mouser,673-T50-2,Micrometals T50-2 red core AL=49; suitable for all HF bands to 30 MHz
----WINDING MATERIAL---,,,T50-6 iron-powder cores (optional - buy 6 for higher-band filters),Mouser,673-T50-6,Micrometals T50-6 yellow core AL=40; lower loss above 10 MHz - use for L1-L3/L7-L9 if desired
----WINDING MATERIAL---,,,22 AWG enameled copper magnet wire,Mouser,829-MW0220.100P,Remington Industries 22 AWG magnet wire; ~1m total needed for all 12 inductors
+MATERIAL-CORE-T50-2,,,T50-2 iron-powder cores (qty 12 if using T50-2 for all inductors),Mouser,673-T50-2,Micrometals T50-2 red core AL=49; suitable for all HF bands to 30 MHz
+MATERIAL-CORE-T50-6,,,T50-6 iron-powder cores (qty 6 optional for higher-band filters),Mouser,673-T50-6,Micrometals T50-6 yellow core AL=40; lower loss above 10 MHz - use for L1-L3/L7-L9 if desired
+MATERIAL-WIRE,,,22 AWG enameled copper magnet wire,Mouser,829-MW0220.100P,Remington Industries 22 AWG magnet wire; ~1m total needed for all 12 inductors
 "C6,C31",C_1206_3216Metric,2,89p,Mouser,603-CC126JRNPOBBN890,Vishay 89pF NP0 1206; NOTE: 89pF is non-standard E24 value - if unavailable substitute 91pF (603-CC126JRNPOBBN910)
 "C7,C19,C32",C_1206_3216Metric,3,180p,Mouser,81-GRM31A5C3A181JW1D,
 "C8,C33",C_1206_3216Metric,2,270p,Mouser,81-GRM31A5C2H271GW1D,
